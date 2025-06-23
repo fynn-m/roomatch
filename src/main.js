@@ -70,7 +70,12 @@ function renderWgDashboard(wgs) {
 function listenForAllWgs() {
   const q = query(collection(db, "wgs"));
   onSnapshot(q, (snapshot) => {
-    const allWgs = snapshot.docs.map(doc => doc.data());
+    let allWgs = snapshot.docs.map(doc => doc.data());
+    console.log("Unsortierte WG-Daten empfangen:", allWgs);
+    
+    allWgs.sort((a, b) => b.totalScore - a.totalScore);
+    
+    console.log("Sortierte WG-Daten:", allWgs);
     renderWgDashboard(allWgs);
   });
 }
