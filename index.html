@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WG-Match</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    
+    <div id="app-container">
+      <div class="header">
+        <h1>Live WG-Übersicht</h1>
+        <button id="reset-btn" class="hidden">Neue Umfrage starten</button>
+      </div>
+
+      <div id="start-card">
+        <p>Nimm an der Umfrage teil, um in die Matches aufgenommen zu werden:</p>
+        <input type="text" id="name-input" placeholder="Dein Vorname" autocomplete="off" />
+        <button id="start-btn">Umfrage starten</button>
+      </div>
+
+      <div id="survey-card" class="hidden">
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
+        <div id="question-card">
+          <h2 id="question-text">Lädt Frage...</h2>
+          <div id="button-container">
+            <button id="like-btn" class="choice-btn">👍 Like</button>
+            <button id="egal-btn" class="choice-btn">🤷 Egal</button>
+            <button id="dislike-btn" class="choice-btn">👎 Dislike</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="results-container"></div>
+    
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
